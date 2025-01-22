@@ -155,6 +155,7 @@ public class Desafio {
 
             }
         }
+        sc.close();
         System.out.println("Saindo...Até mais!");
     }
 }
