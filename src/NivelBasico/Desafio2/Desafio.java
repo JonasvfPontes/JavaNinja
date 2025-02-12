@@ -32,7 +32,7 @@ public class Desafio {
             }else{
                 saudacao = "Olá!";
 
-                if (menu[opt - 1].equals("Sair")) {
+                if(menu[opt - 1].equals("Sair")) {
                     break;
 
                 } else if (menu[opt - 1].equals("Cadastrar ninjas")) {
@@ -40,7 +40,7 @@ public class Desafio {
                     int pos = 0;
                     int posMaiUm;
                     String nomeNinja;
-                    int idadeNinja = 0;
+                    int idadeNinja;
 
                     System.out.println("Cadastro de ninjas [Sair = S]\n================");
                     while (true){
@@ -59,10 +59,10 @@ public class Desafio {
                         nomeNinja = sc.nextLine();
                         nomeNinja = nomeNinja.trim();
 
-                        if (nomeNinja.toUpperCase().equals("S") ){
+                        if (nomeNinja.equalsIgnoreCase("S")){
                             System.out.println("Ok, retornando ao menu principal");
                             break;
-                        }else if (nomeNinja.length() > 0){
+                        }else if (!nomeNinja.isEmpty()){
                             System.out.println("Idade do ninja "+ nomeNinja.toUpperCase() + ": ");
                             idadeNinja = sc.nextInt();
                             sc.nextLine();
@@ -76,7 +76,6 @@ public class Desafio {
                 } else if (menu[opt - 1].equals("Ver ninjas cadastrados")) {
                     System.out.println("LISTA DE NINJAS CADASTRADOS\n================");
                     int ultPos = 0;
-                    int len = 0;
                     //Procurando ultima posição não livre do array
                     for (int i = 0; i < name.length; i++) {
                         if (name[i] != null){
@@ -105,7 +104,7 @@ public class Desafio {
 
                     //Exibir menu de edição
                     while (true) {
-                        int opcIndex = -1;
+                        int opcIndex;
                         System.out.println("\n\n================\nO que quer fazer?");
                         System.out.println("1 - Excluir\n2 - Editar\n3 - Voltar");
                         int opc = sc.nextInt();
